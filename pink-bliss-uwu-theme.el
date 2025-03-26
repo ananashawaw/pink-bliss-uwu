@@ -27,7 +27,7 @@
 ;; pink-gnu.xpm: http://www.emacswiki.org/emacs/download/pink-gnu.xpm
 
 
-;;; Commentary
+;;; Commentary:
 ;; Pink and bright theme, with beautiful styling for modern tooling like org-mode.
 
 ;;; Code:
