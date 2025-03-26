@@ -168,7 +168,6 @@ It is very pink.")
  '(lsp-ui-doc-background ((t (:background "seashell"))))
  
  ;; org-mode
- ;; TODO: better colors for the nesting levels?
  '(org-level-1                ((t (:foreground "violet red" :background "pink" :weight extra-bold :height 1.5))))
  '(org-level-2                ((t (:foreground "hot pink" :background "pink" :weight bold :height 1.2))))
  '(org-level-3                ((t (:foreground "pale violet red" :background "pink" :weight bold :height 1.1))))
