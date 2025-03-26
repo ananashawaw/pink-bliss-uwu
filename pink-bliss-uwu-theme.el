@@ -1,4 +1,4 @@
-;;; pink-bliss-uwu-theme.el --- a pink color theme for Emacs
+;;; pink-bliss-uwu-theme.el --- a pink color theme for Emacs -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2005–2015  Alex Schroeder <alex@gnu.org>
 ;;               2024       Marie K. Ekeberg <mke@themkat.net>
