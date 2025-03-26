@@ -1,7 +1,11 @@
-;;; pink-bliss-uwu-theme.el --- a pink color theme for Emacs -*- lexical-binding: t; -*-
+;;; pink-bliss-uwu-theme.el --- Pink color theme -*- lexical-binding: t; -*-
+
+;; URL: https://github.com/themkat/pink-bliss-uwu
+;; Version: 1.0.0
+;; Package-Requires: ((emacs "24.1"))
 
 ;; Copyright (C) 2005–2015  Alex Schroeder <alex@gnu.org>
-;;               2024       Marie K. Ekeberg <mke@themkat.net>
+;;               2024-2025  Marie K. Ekeberg <mke@themkat.net>
 
 ;; This file is not part of GNU Emacs.
 
@@ -20,8 +24,11 @@
 ;; Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
 ;; MA 02111-1307, USA.
 
-;; URL: http://www.emacswiki.org/emacs/PinkBliss
 ;; pink-gnu.xpm: http://www.emacswiki.org/emacs/download/pink-gnu.xpm
+
+
+;;; Commentary
+;; Pink and bright theme, with beautiful styling for modern tooling like org-mode.
 
 ;;; Code:
 
