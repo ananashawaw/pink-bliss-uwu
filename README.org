@@ -1,3 +1,4 @@
+[[https://melpa.org/#/pink-bliss-uwu-theme][file:https://melpa.org/packages/pink-bliss-uwu-theme-badge.svg]]
 * ~ pink-bliss-UwU theme for Emacs ~
 Uses the older pink-bliss theme by Alex Schroeder as a base, and aims to be more modern. This includes theming for org-mode, helm, newer programming languages and much more. As this is a modern theme, it also will get rid of redundant 256 colors checks everywhere. Aims to be modern theme for computers in $currentYear.
 
@@ -21,8 +22,17 @@ Clone this repository to a path you can remember on your machine. Then you can s
 #+END_SRC
 (if you don't want to load it right away, you can omit the last line and load it later with =M-x load-theme= and select =pink-bliss-uwu=)
 
-*** use-package (local, NOT yet on MELPA)
-(like in the previous step) Clone this repository to a path you can remember on your machine. Then you can use =use-package= to load it:
+*** use-package
+To install from MELPA, simply add:
+#+BEGIN_SRC emacs-lisp
+  (use-package pink-bliss-uwu-theme
+    :config
+    (load-theme 'pink-bliss-uwu t))
+  #+END_SRC
+
+
+**** Local use-package
+(like in the previous manual step) Clone this repository to a path you can remember on your machine. Then you can use =use-package= to load it:
 #+BEGIN_SRC emacs-lisp
   (use-package pink-bliss-uwu-theme
     :load-path "/path/to/theme"
