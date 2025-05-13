@@ -232,7 +232,7 @@ To check out the list, evaluate
 
 
 ;; Give the users the option to turn off the default font
-(defcustom pink-bliss-uwu-use-custom-font nil
+(defcustom pink-bliss-uwu-use-custom-font t
   "Whether to use Monaspace Radon font or not if it is installed."
   :group 'pink-bliss-uwu
   :type 'boolean)
