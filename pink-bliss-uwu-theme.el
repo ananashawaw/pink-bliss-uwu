@@ -200,8 +200,7 @@ It is very pink.")
  '(centaur-tabs-modified-marker-selected ((t (:background "violet red" :foreground "white"))))
  '(centaur-tabs-unselected ((((min-colors 256)) (:background "pink" :foreground "white"))))
  '(centaur-tabs-unselected-modified ((t (:background "pink" :foreground "white" :weight bold))))
- '(centaur-tabs-modified-marker-unselected ((t (:background "pink" :foreground "white"))))
- '(centaur-tabs-background-color ((t (:background "MistyRose5" :foreground "MistyRose5")))))
+ '(centaur-tabs-modified-marker-unselected ((t (:background "pink" :foreground "white")))))
 
 (custom-theme-set-variables
  'pink-bliss-uwu
