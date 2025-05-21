@@ -36,7 +36,7 @@
   "A theme based on the color pink uWu.
 It is very pink.")
 
-(custom-theme-set-face 'pink-bliss-uwu
+(custom-theme-set-faces 'pink-bliss-uwu
  ;; Basics
  '(default               ((t (:foreground "magenta4" :background "misty rose"))))
  '(button                ((t (:bold t))))
