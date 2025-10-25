@@ -132,6 +132,10 @@ It is very pink.")
  '(widget-field     ((t (:foreground "magenta4" :background "pink" :extend t))))
  '(widget-button    ((t (:foreground "magenta4" :background "pink" :box t :weight bold))))
 
+ ;; Page Break Line
+ ;; Usually used with dashboard
+ '(page-break-lines ((t (:foreground "magenta4" :weight normal :slant normal))))
+ 
  ;; dashboard
  ;; uses some widget themes by default, which makes it less nice with this theme.
  ;; Overriding is sensible here? yes.
