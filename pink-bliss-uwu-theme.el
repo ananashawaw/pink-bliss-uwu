@@ -53,6 +53,8 @@ It is very pink.")
  '(region                ((t (:foreground "dark orange" :background "seashell"))))
  '(link                  ((t (:foreground "purple"))))
  '(hl-line               ((t (:background "pink"))))
+ '(error                 ((t (:foreground "red"
+																					:box (:line-width (1 . 1) :color "violet red" :style flat-button )))))
 
  ;; isearch
  '(isearch                        ((t (:foreground "white" :background "hot pink"))))
