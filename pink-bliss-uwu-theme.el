@@ -191,6 +191,13 @@ It is very pink.")
  '(org-verse               ((t (:background "white" :extend t))))
  '(org-verbatim            ((t (:background "white"))))
  '(org-link                ((t (:foreground "purple"     :weight bold :underline t))))
+ '(org-done                ((t (:foreground "lime green" :weight bold
+																						:box (:line-width (1 . 1) :color "magenta4" :style flat-button)))))
+ '(org-todo                ((t (:foreground "Dark orchid" :weight bold :inverse-video t
+																						:box (:line-width (1 . 1) :color "magenta4" :style flat-button)))))
+ '(org-priority ((t	(:inherit (org-level-5)
+															:box (:line-width (1 . 1) :color "hot pink" :style flat-button)))))
+
 
  ;; Markdown mode (mimic some org mode styling)
  '(markdown-header-face-1    ((t (:foreground "violet red"       :weight bold :height 1.5))))
