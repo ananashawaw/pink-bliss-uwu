@@ -228,7 +228,7 @@ It is very pink.")
  '(elpaca-log-error            ((t (:inherit (elpaca-failed)))))
  '(elpaca-info-section         ((t (:background "pink" :weight bold))))
  '(elpaca-info-package         ((t (:background "moccasin" :height 2.0
-                                                :box ( :line-width (2 . 2) :color "misty rose" :style released-button)))))
+                                                :box ( :line-width (2 . 2) :color "misty rose" :style released-button))))))
 
 (custom-theme-set-variables
  'pink-bliss-uwu
