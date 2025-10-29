@@ -1,38 +1,36 @@
 [[https://melpa.org/#/pink-bliss-uwu-theme][file:https://melpa.org/packages/pink-bliss-uwu-theme-badge.svg]]
 * ~ pink-bliss-UwU theme for Emacs ~
-Uses the older pink-bliss theme by Alex Schroeder as a base, and aims to be more modern. This includes theming for org-mode, helm, newer programming languages and much more. As this is a modern theme, it also will get rid of redundant 256 colors checks everywhere. Aims to be modern theme for computers in $currentYear.
+Uses the older pink-bliss theme by Alex Schroeder as a base, and aims to be more modern. This includes theming for org-mode, helm, newer programming languages and much more. As this is a modern theme, it also will get rid of redundant 256 colors checks everywhere. Aims to be a modern theme for computers in $currentYear.
 
-Work in progress, so some colors and color combinations might change slightly. Feel free to help out in this process if you also would like a pink UwU theme :sparkles:
+This is a work in progress, as such, some colors and color combinations might change slightly. Feel free to help out in this process if you also would like a pink UwU theme :sparkles:
 
 #+ATTR_ORG: :width 800
-[[./screenshot.png]]
+[[ressources/screenshot.png]]
 
 ** Installation and usage
-By default the theme uses the [[https://monaspace.githubnext.com/][Monaspace Radon]] font if available, so make sure to install it if you want to use it!
-
+By default, the theme uses the [[https://monaspace.githubnext.com/][Monaspace Radon]] font if available, make sure to install it if you want to use it!
 
 *** Manual
-Clone this repository to a path you can remember on your machine. Then you can simply add it and use in your config:
+Clone this repository to a path you can remember on your machine. Then you can simply add it and activate it in your config:
 #+BEGIN_SRC emacs-lisp
   (add-to-list 'custom-theme-load-path
                "/path/to/theme")
 
-  ;; use it
+  ;; Activate it
   (load-theme 'pink-bliss-uwu t)
 #+END_SRC
-(if you don't want to load it right away, you can omit the last line and load it later with =M-x load-theme= and select =pink-bliss-uwu=)
+(if you don't want to load it right away, omit the last line and load it later with =M-x load-theme RET pink-bliss-uwu=)
 
 *** use-package
-To install from MELPA, simply add:
+To install from MELPA, simply add this to your config:
 #+BEGIN_SRC emacs-lisp
   (use-package pink-bliss-uwu-theme
     :config
     (load-theme 'pink-bliss-uwu t))
   #+END_SRC
 
-
 **** Local use-package
-(like in the previous manual step) Clone this repository to a path you can remember on your machine. Then you can use =use-package= to load it:
+(Just like in the previous manual step) Clone this repository to a path you can remember on your machine and can use =use-package= to load it:
 #+BEGIN_SRC emacs-lisp
   (use-package pink-bliss-uwu-theme
     :load-path "/path/to/theme"
@@ -40,7 +38,7 @@ To install from MELPA, simply add:
     (load-theme 'pink-bliss-uwu t))
 #+END_SRC
 
-While it's not prettier than the manual install, it might help in keeping your configuration consistent and more readable.
+While not prettier than the manual install, it might help in keeping your configuration consistent and more readable.
 
 *** straight.el with use-package
 If you are one of the few who use straight.el, you can install it without manually cloning the repository.
@@ -50,19 +48,16 @@ If you are one of the few who use straight.el, you can install it without manual
     :config
     (load-theme 'pink-bliss-uwu t))
 #+END_SRC
-
 (if your local git install suddenly gets really anal on you in this one package: Remove the =:host= argument and put the ssh clone .git file into the =:repo= argument)
 
-
 ** Configuration
-*Note: Due to the theme loading a font, and not reverting it, this setting will have to come BEFORE you load the theme! That means before your load-theme call.*
+*Note: Due to the theme loading a font, and not reverting it, this setting will have to come __BEFORE__ you load the theme! That means before your call to =load-theme=.*
 
-If you have Monaspace Radon installed, but don't want to use it, you can disable it by setting =pink-bliss-uwu-use-custom-font= to =nil=. Example:
-
+If you have [[https://monaspace.githubnext.com/][Monaspace Radon]] installed, but don't want to use it, you can disable it by setting =pink-bliss-uwu-use-custom-font= to =nil=. Example:
 #+BEGIN_SRC emacs-lisp
   (setq pink-bliss-uwu-use-custom-font nil)
 
-  ;; or use-pacakge:
+  ;; Or, with use-package:
   (use-package pink-bliss-uwu-theme
     :load-path "/path/to/theme"
     :config
@@ -74,9 +69,8 @@ If you have Monaspace Radon installed, but don't want to use it, you can disable
 ** Contributing
 Feel free to contribute if you want to :heart:
 
-- If you want to discuss face colors for specific modes, feel free to create an issue. This also includes feature requests, meaning support for various modes.
+- If you want to discuss face colors for specific modes, feel free to [[https://github.com/themkat/pink-bliss-uwu/issues/new][create an issue]]. This also includes feature requests, meaning support for various modes. 
 
 - Faces for your favorite package or mode missing? Feel free to contribute a PR! If you are unsure on how, you can make an issue to discuss it first. No worries :heart:
-
 
 Above all else, be kind! Respect that people are different than you. No discrimination allowed (obviously).
