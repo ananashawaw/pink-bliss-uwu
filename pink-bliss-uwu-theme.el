@@ -43,12 +43,12 @@ It is very pink.")
  '(fringe                ((t (:background "misty rose"))))
  '(menu                  ((t (:foreground "violet red" :background "pink"))))
  '(mode-line             ((t (:foreground "purple"     :background "pink"
-		                                                       :box (:line-width 1 :style released-button)))))
+		                                      :box (:line-width 1 :style released-button)))))
  '(mode-line-inactive    ((t (:foreground "orchid" :background "pink"
-			                                                     :box (:line-width 1 :style released-button)))))
+			                                    :box (:line-width 1 :style released-button)))))
  '(minibuffer-prompt     ((t (:foreground "deep pink"))))
  '(tool-bar              ((t (:background "pink"
-                                                           :box (:line-width 1 :style released-button)))))
+                                          :box (:line-width 1 :style released-button)))))
  '(tooltip               ((t (:foreground "violet red"  :background "lemon chiffon"))))
  '(region                ((t (:foreground "dark orange" :background "seashell"))))
  '(link                  ((t (:foreground "purple"))))
@@ -59,7 +59,7 @@ It is very pink.")
  ;; isearch
  '(isearch                        ((t (:foreground "white" :background "hot pink"))))
  '(isearch-lazy-highlight-face    ((t (:foreground "white" :background "deep pink"))))
- 
+
  ;; info-mode
  '(header-line    ((t (:background "hot pink" :foreground "white"))))
 
@@ -82,7 +82,7 @@ It is very pink.")
  '(font-lock-type-face                 ((t (:foreground "light slate blue" :weight bold))))
  '(font-lock-variable-name-face        ((t (:foreground "hot pink"))))
  '(font-lock-warning-face              ((t (:foreground "red" :bold t))))
- 
+
  ;; cperl
  '(cperl-array-face             ((t (:foreground "tomato"    :bold t))))
  '(cperl-hash-face              ((t (:foreground "chocolate" :bold t))))
@@ -90,14 +90,13 @@ It is very pink.")
 
  ;; makefiles
  '(makefile-shell-face    ((t (:background "linen"))))
- 
+
   ;; helm
  '(helm-header                 ((t (:foreground "hot pink" :background "hot pink"))))
  '(helm-ff-dotted-directory    ((t (:foreground "hot pink" :background "seashell" :weight bold))))
  '(helm-candidate-number       ((t (:foreground "seashell" :background "magenta"))))
  '(helm-source-header          ((t (:foreground "seashell" :background "hot pink"))))
  '(helm-selection              ((t (:foreground "purple"   :background "pink" :weight bold))))
-
 
  ;; ivy (part of swiper)
  '(ivy-confirm-face     ((t (:foreground "magenta"))))
@@ -128,6 +127,11 @@ It is very pink.")
  ;; highlights (mouse hovers, other hovers etc.)
  '(highlight    ((t (:foreground "magenta4" :background "pink"))))
 
+ ;; Iedit
+ '(iedit-occurrence ((t (:extend t :inherit (highlight)
+																 :box (:line-width (1 . 1) :color "magenta4" :style released-button)))))
+ '(iedit-read-only-occurrence ((t (:inverse-video t :inherit (iedit-occurrence)))))
+
  ;; widgets
  '(widget-field     ((t (:foreground "magenta4" :background "pink" :extend t))))
  '(widget-button    ((t (:foreground "magenta4" :background "pink" :box t :weight bold))))
@@ -141,7 +145,7 @@ It is very pink.")
  ;; Overriding is sensible here? yes.
  '(dashboard-items-face       ((t (:foreground "magenta4"))))
  '(dashboard-no-items-face    ((t (:foreground "magenta4"))))
- 
+
  ;; magit
  '(magit-section-highlight              ((t (:background "pink"))))
  '(magit-diff-hunk-heading              ((t (:foreground "black" :background "MistyRose2"))))
@@ -173,7 +177,7 @@ It is very pink.")
  '(lsp-headerline-breadcrumb-separator-face    ((t (:foreground "purple" :height 0.8))))
  '(lsp-headerline-breadcrumb-symbols-face      ((t (:foreground "seashell"))))
  '(lsp-ui-doc-background                       ((t (:background "seashell"))))
- 
+
  ;; org-mode
  '(org-level-1             ((t (:foreground "violet red"       :background "pink"  :weight extra-bold :height 1.5))))
  '(org-level-2             ((t (:foreground "hot pink"         :background "pink"  :weight bold       :height 1.2))))
@@ -225,7 +229,7 @@ It is very pink.")
  '(markdown-header-face-5    ((t (:foreground "light slate blue" :weight bold :height 1.0))))
  '(markdown-header-face-6    ((t (:foreground "coral"            :weight bold :height 1.0))))
  '(markdown-code-face        ((t (:background "white"            :extend t))))
- 
+
  ;; Centaur tabs
  '(centaur-tabs-selected                      ((t (:foreground "white" :background "hot pink"))))
  '(centaur-tabs-selected-modified             ((t (:foreground "white" :background "violet red" :weight bold))))
@@ -233,7 +237,7 @@ It is very pink.")
  '(centaur-tabs-unselected                    ((t (:foreground "white" :background "pink"))))
  '(centaur-tabs-unselected-modified           ((t (:foreground "white" :background "pink" :weight bold))))
  '(centaur-tabs-modified-marker-unselected    ((t (:foreground "white" :background "pink"))))
- 
+
  ;; Elpaca
  '(elpaca-ui-marked-rebuild    ((t (:foreground "magenta4"         :background "chartreuse"))))
  '(elpaca-ui-marked-install    ((t (:foreground "light slate blue" :background "pale turquoise" :weight bold))))
