@@ -258,7 +258,12 @@ It is very pink.")
  '(elpaca-log-error            ((t (:inherit (elpaca-failed)))))
  '(elpaca-info-section         ((t (:background "pink" :weight bold))))
  '(elpaca-info-package         ((t (:background "moccasin" :height 2.0
-                                                :box ( :line-width (2 . 2) :color "misty rose" :style released-button))))))
+                                                :box (:line-width (2 . 2) :color "misty rose" :style released-button)))))
+
+ ;; Ocaml
+ ;;; merlin-eldoc
+ '(merlin-eldoc-occurrences-face ((t :inherit (highlight)
+                                     :box (:line-width (1 . 1) :color "magenta4" :style flat-button)))))
 
 (custom-theme-set-variables
  'pink-bliss-uwu
