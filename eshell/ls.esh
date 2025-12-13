@@ -1,0 +1,92 @@
+# This is meant to be executed within eshell.
+# DO NOT RUN THIS AS ROOT, it won't show the face for executable (root can exec everything, so it's off).
+
+# Note that in elisp, chmod takes the file first and only supports octal codes.
+# Refresher on chmod codes :
+# 7 : rwx, 3 : -wx,
+# 6 : rw-, 2 : -w-,
+# 5 : r-x, 1 : --x,
+# 4 : r--, 0 : ---
+
+# Refresher on file types :
+# Can be found with `info ls -n "What information is listed"` under `-l`.
+# It is the first character of the file attributes when using ls -l.
+# - : normal file,             C : high performance ("contiguous data") file,
+# l : symbolic link            n : network special file (HP-UX),
+# d : directory,               M : off-line ("migrated") file (Cray DMF),
+# p : FIFO (named pipe),       D : door (Solaris),
+# s : socket,                  P : port (Solaris),       
+# c : character special file,  ? : some other file type,
+# b : block special file.
+
+# As of 2025-12-12, the order checked is :
+# 1.  missing,  2. symlink,    3. directory,
+# 4.  special,  5. executable, 6. unreadable, 
+# 7.  archive,  8. backup,     9. product,
+# 10. clutter,  11.readonly
+
+# Clear any previous run.
+rm directory symbolic-link executable read-only unreadable special-file archive.tar backup~ product.o clutter
+
+# eshell-ls-directory
+mkdir directory
+
+# eshell-ls-symlink
+# eshell-ls-missing
+# For a file to be missing, they need to be referenced, but not exist,
+# There surely are several ways to do that, but an easy one is to just symlink to a nonexistant file.
+ln --symbolic missing-file symbolic-link
+
+# eshell-ls-executable
+# As it is the first check, anything with x works, so 7, 5, 3, or 1.
+# In order to ensure reordering doesn't break things, we take one that's readable and writable as well, so : 7.
+touch executable
+chmod executable 777
+
+# eshell-ls-readonly
+# This is the very last check made currently (2025-12-12).
+# It only checks if the file is not writable to, however, eshell-ls-executable and eshell-ls-unreadable came first.
+# As such, only 4 works.
+# Note we use 004 rather than 444, because 444 actually sets 674 when called from elisp.
+touch read-only
+chmod read-only 004
+
+# eshell-ls-unreadable
+# It checks whether the file is not readable, but the check for eshell-ls-executable comes first.
+# As such, only 2 or 0 would work.
+touch unreadable
+chmod unreadable 222
+
+# eshell-ls-special
+# A special file is defined, in eshell, as one whose filetype isn't '-'.
+# However, the tests for eshell-ls-directory and eshell-ls-symlink are executed beforehand.
+# Furthermore, 'n', 'M', 'D', 'P' are hardware specific 
+# As such we need to choose from : 'C', 'p', 's', 'c', 'b', and, '?'
+# 'c', 'b' and 'p' are created with `mknod`, however, 'c' (/dev/tty0 for example)  and 'b' (/dev/nvme0n0 for example) require two extra arguments which are os specific, so we cane exclude them.
+# 's' is mainly outdated, but can be created with `nc`/`netcat`, it's a possibility but it's impractical
+# 'C' has no documentation available and '?' seems too obscure.
+# TLDR : 's' and 'p' seems to be the best options, 'p' can be created by `mknod p` or `mkfifo`, we'll use the latter here.
+mkfifo special-file
+
+# eshell-ls-archive
+# They are defined based on eshell-ls-archive-regexp.
+# The human readable version of it is, as of 2025-12-12 : "[.](t(a[rz]|gz)|arj|lzh|zip|[zZ]|gz|bz2|xz|deb|rpm)'"
+touch archive.tar
+
+# eshell-ls-backup
+# They are defined based on eshell-ls-backup-regexp.
+# The human readable version of it is, as of 2025-12-12 : "`[.]?#|([.]bak|~)'"
+touch backup~
+
+# eshell-ls-product
+# They are defined based on eshell-ls-product-regexp.
+# The human readable version of it is, as of 2025-12-12 : "[.](elc|o(bj)?|a|lib|res)'"
+touch product.o
+
+# eshell-ls-clutter
+# They are defined based on eshell-ls-clutter-regexp.
+# The human readable version of it is, as of 2025-12-12 :  "(^texput[.]log|^core)'"
+setq eshell-ls-clutter-regexp "clutter" > /dev/null
+touch clutter
+
+ls -l
