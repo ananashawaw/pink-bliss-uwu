@@ -1,0 +1,142 @@
+* Preamble
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+\documentclass{article}
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{tikz}
+#+end_src
+
+* Sections
+** ml/title
+
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+  \title{This is the title}
+
+  \begin{document}
+#+end_src
+
+** ml/chapter
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+  \chapter{This is a chapter}
+
+#+end_src
+** ml/section
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+  \section{This is a section}
+
+  
+#+end_src
+** ml/subsection
+
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+  \subsection{This is a subsection}
+  
+#+end_src
+* font size
+
+Using informations from the amazing ressource :
+https://www.sascha-frank.com/latex-font-size.html
+
+We have the following Average coefficient table:
+Note : memoir adds miniscule and HUGE, we may submit a PR to add them to magic-latex-preview
+#+begin_src python :tangle "no"
+  article =  {"tiny"        : {"10pt":  5, "11pt":  6  "12pt":  6},
+              "scriptsize"  : {"10pt":  7, "11pt":  8, "12pt":  8},
+              "footnotesize": {"10pt":  8, "11pt":  9, "12pt": 10},
+              "small"       : {"10pt":  9, "11pt": 10, "12pt": 11},
+              "normalsize"  : {"10pt": 10, "11pt": 11, "12pt": 12},
+              "large"       : {"10pt": 12, "11pt": 12, "12pt": 14},
+              "Large"       : {"10pt": 14, "11pt": 14, "12pt": 17},
+              "LARGE"       : {"10pt": 17, "11pt": 17, "12pt": 20},
+              "huge"        : {"10pt": 20, "11pt": 20, "12pt": 25},
+              "Huge"        : {"10pt": 25, "11pt": 25, "12pt": 25},}
+
+  memoir = {"miniscule"   : {"9pt" :  4, "10pt":   5, "11pt":   6, "12pt":   7,
+                             "14pt":  8, "17pt":   9, "20pt":  10, "25pt":  11,
+                             "30pt": 12, "36pt":  14, "48pt":  17, "60pt":  20,},
+            "tiny"        : {"9pt" :  5, "10pt":   6, "11pt":   7, "12pt":   8,
+                             "14pt":  9, "17pt":  10, "20pt":  11, "25pt":  12,
+                             "30pt": 14, "36pt":  17, "48pt":  20, "60pt":  25,},
+            "scriptsize"  : {"9pt" :  6, "10pt":   7, "11pt":   8, "12pt":   9,
+                             "14pt": 10, "17pt":  11, "20pt":  12, "25pt":  14,
+                             "30pt": 17, "36pt":  20, "48pt":  25, "60pt":  30,},
+            "footnotesize": {"9pt" :  7, "10pt":   8, "11pt":   9, "12pt":  10,
+                             "14pt": 11, "17pt":  12, "20pt":  14, "25pt":  17,
+                             "30pt": 20, "36pt":  25, "48pt":  30, "60pt":  36,},
+            "small"       : {"9pt" :  8, "10pt":   9, "11pt":  10, "12pt":  11,
+                             "14pt": 12, "17pt":  14, "20pt":  17, "25pt":  20,
+                             "30pt": 25, "36pt":  30, "48pt":  36, "60pt":  48,},
+            "normalsize"  : {"9pt" :  9, "10pt":  10, "11pt":  11, "12pt":  12,
+                             "14pt": 14, "17pt":  17, "20pt":  20, "25pt":  25,
+                             "30pt": 30, "36pt":  36, "48pt":  48, "60pt":  60,},
+            "large"       : {"9pt" : 10, "10pt":  11, "11pt":  12, "12pt":  14,
+                             "14pt": 17, "17pt":  20, "20pt":  25, "25pt":  30,
+                             "30pt": 36, "36pt":  48, "48pt":  60, "60pt":  72,},
+            "Large"       : {"9pt" : 11, "10pt":  12, "11pt":  14, "12pt":  17,
+                             "14pt": 20, "17pt":  25, "20pt":  30, "25pt":  36,
+                             "30pt": 48, "36pt":  60, "48pt":  72, "60pt":  84,},
+            "LARGE"       : {"9pt" : 12, "10pt":  14, "11pt":  17, "12pt":  20,
+                             "14pt": 25, "17pt":  30, "20pt":  36, "25pt":  48,
+                             "30pt": 60, "36pt":  72, "48pt":  84, "60pt":  96,},
+            "huge"        : {"9pt" : 14, "10pt":  17, "11pt":  20, "12pt":  25,
+                             "14pt": 30, "17pt":  36, "20pt":  48, "25pt":  60,
+                             "30pt": 72, "36pt":  84, "48pt":  96, "60pt": 108,},
+            "Huge"        : {"9pt" : 17, "10pt":  20, "11pt":  25, "12pt":  30,
+                             "14pt": 36, "17pt":  48, "20pt":  60, "25pt":  72,
+                             "30pt": 84, "36pt":  96, "48pt": 108, "60pt": 120,},
+            "HUGE"        : {"9pt" : 20, "10pt":  25, "11pt":  30, "12pt":  36,
+                             "14pt": 48, "17pt":  60, "20pt":  72, "25pt":  84,
+                             "30pt": 96, "36pt": 108, "48pt": 120, "60pt": 132,}}
+
+  beamer = {"tiny"        : {"8pt" :  5, "9pt" :     5, "10pt":     5, "11pt":     6,
+                             "12pt":  6, "14pt":     6, "17pt":     8, "20pt":    10,},
+            "scriptsize"  : {"8pt" :  5, "9pt" :     6, "10pt":     7, "11pt":     8,
+                             "12pt":  8, "14pt":     8, "17pt":    10, "20pt":    12,},
+            "footnotesize": {"8pt" :  6, "9pt" :     7, "10pt":     8, "11pt":     9,
+                             "12pt": 10, "14pt":    10, "17pt":    12, "20pt":    14,},
+            "small"       : {"8pt" :  7, "9pt" :     8, "10pt":     9, "11pt":    10,
+                             "12pt": 11, "14pt":    12, "17pt":    14, "20pt":    17,},
+            "normalsize"  : {"8pt" :  8, "9pt" :     9, "10pt":    10, "11pt":    11,
+                             "12pt": 12, "14pt":    14, "17pt":    17, "20pt":    20,},
+            "large"       : {"8pt" : 10, "9pt" :    10, "10pt":    12, "11pt":    12,
+                             "12pt": 14, "14pt":    17, "17pt":    20, "20pt":    25,},
+            "Large"       : {"8pt" : 11, "9pt" :    11, "10pt":    14, "11pt":    14,
+                             "12pt": 17, "14pt":    20, "17pt":    25, "20pt": 29.86,},
+            "LARGE"       : {"8pt" : 12, "9pt" :    12, "10pt":    17, "11pt":    17,
+                             "12pt": 20, "14pt":    25, "17pt": 29.86, "20pt": 35.83,},
+            "huge"        : {"8pt" : 14, "9pt" :    14, "10pt":    20, "11pt":    20,
+                             "12pt": 25, "14pt": 29.86, "17pt": 35.83, "20pt": 42.99,},
+            "Huge"        : {"8pt" : 17, "9pt" :    17, "10pt":    25, "11pt":    25,
+                             "12pt": 25, "14pt": 35.83, "17pt": 42.99, "20pt": 51.59,}}
+#+end_src
+
+
+#+begin_src latex :tangle "magic-latex-buffer.tex"
+  \begin{enumerate}
+  \item \verb|ml/tiny| : \tiny This line is tiny.
+  \item \verb|ml/script| : \scriptsize This line is very small.
+  \item \verb|ml/footnote| : \footnotesize This line is quite small.
+  \item \verb|ml/small| : \small This line is small.
+  \item \verb|ml/large| : \large This line is large.
+  \item \verb|ml/llarge|: \Large This line is larger.
+  \item \verb|ml/xlarge| : \LARGE This line is very large.
+  \item \verb|ml/huge| : \huge This line is huge.
+  \item \verb|ml/hhuge| : \Huge This line is the largest.
+  \end{enumerate}
+#+end_src
+ 
+* Other
+\overline{ml/overline}{this text is overlined}
+
+
+
+\end{document}
