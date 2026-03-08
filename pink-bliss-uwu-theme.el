@@ -91,7 +91,7 @@ It is very pink.")
  ;; makefiles
  '(makefile-shell-face    ((t (:background "linen"))))
  
-  ;; helm
+ ;; helm
  '(helm-header                 ((t (:foreground "hot pink" :background "hot pink"))))
  '(helm-ff-dotted-directory    ((t (:foreground "hot pink" :background "seashell" :weight bold))))
  '(helm-candidate-number       ((t (:foreground "seashell" :background "magenta"))))
@@ -142,7 +142,7 @@ It is very pink.")
  '(magit-section-highlight              ((t (:background "pink"))))
  '(magit-diff-hunk-heading              ((t (:foreground "black" :background "MistyRose2"))))
  '(magit-diff-hunk-heading-highlight    ((t (:foreground "black" :background "MistyRose3"))))
- '(magit-diff-context                   ((t (:inherit default))))
+ '(magit-diff-context                   ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
  '(magit-diff-context-highlight         ((t (:background "MistyRose2"))))
  '(magit-diff-removed                   ((t (:background "RosyBrown2"))))
  '(magit-diff-added                     ((t (:background "RosyBrown1"))))
