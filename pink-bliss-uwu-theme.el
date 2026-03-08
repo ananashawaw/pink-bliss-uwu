@@ -128,6 +128,20 @@ It is very pink.")
  ;; highlights (mouse hovers, other hovers etc.)
  '(highlight    ((t (:foreground "magenta4" :background "pink"))))
 
+ ;; focus / fade modes.
+ ;; focus
+ '(focus-focused                    ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(focus-unfocused                  ((t (:foreground "thistle"))))
+ ;; focus-mode
+ '(focus-main                       ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(focus-dim                        ((t (:foreground "thistle"))))
+ ;; latex-table-wizard
+ '(latex-table-wizard-highlight     ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(latex-table-wizard-background    ((t (:foreground "thistle"))))
+ ;; auto-dim-other-buffers
+ '(auto-dim-other-buffers           ((t (:background "thistle"))))
+ '(auto-dim-other-buffers-hide      ((t (:foreground "thistle" :background "thistle"))))
+
  ;; widgets
  '(widget-field     ((t (:foreground "magenta4" :background "pink" :extend t))))
  '(widget-button    ((t (:foreground "magenta4" :background "pink" :box t :weight bold))))
