@@ -130,13 +130,13 @@ It is very pink.")
 
  ;; focus / fade modes.
  ;; focus
- '(focus-focused                    ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(focus-focused                    nil)
  '(focus-unfocused                  ((t (:foreground "thistle"))))
  ;; focus-mode
- '(focus-main                       ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(focus-main                       ((t (:foreground ,(face-attribute default :foreground) :background ,(face-attribute default :background)))))
  '(focus-dim                        ((t (:foreground "thistle"))))
  ;; latex-table-wizard
- '(latex-table-wizard-highlight     ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(latex-table-wizard-highlight     ((t (:background "misty rose"))))
  '(latex-table-wizard-background    ((t (:foreground "thistle"))))
  ;; auto-dim-other-buffers
  '(auto-dim-other-buffers           ((t (:background "thistle"))))
@@ -156,7 +156,7 @@ It is very pink.")
  '(magit-section-highlight              ((t (:background "pink"))))
  '(magit-diff-hunk-heading              ((t (:foreground "black" :background "MistyRose2"))))
  '(magit-diff-hunk-heading-highlight    ((t (:foreground "black" :background "MistyRose3"))))
- '(magit-diff-context                   ((t (:foreground "magenta4" :background "misty rose")))) ;; inherit default
+ '(magit-diff-context                   ((t (:inherit (default)))))
  '(magit-diff-context-highlight         ((t (:background "MistyRose2"))))
  '(magit-diff-removed                   ((t (:background "RosyBrown2"))))
  '(magit-diff-added                     ((t (:background "RosyBrown1"))))
